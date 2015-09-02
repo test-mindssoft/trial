@@ -1,0 +1,110 @@
+{% extends "files/desktop/Header/Header.html" %}
+{% block content %}
+<div class="content-container width60">
+  <div class="content-area">
+    <div class="add-container">
+      <div class="add-container-heading">Task List<span class="error-message"></span></div>
+      <div class="input-row-left">
+        <div class="input-row">
+          <div class="field-label">Statutory Level:</div>
+          <div class="field-input">
+            <select class="input-box" >
+              <option>All</option>
+              <option selected="selected">Act</option>
+              <option>Section</option>
+              <option>Sub Section</option>
+              <option>Rule/Scheme/Regulation</option>
+              <option>Sub-Rule</option>
+              <option>Para</option>
+              <option>Ammendments/Remarks</option>
+              <option>Clause</option>
+              <option>Subclause</option>
+              <option>Forms</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-row">
+          <div class="field-label">Activity Type:</div>
+          <div class="field-input">
+            <select class="input-box" >
+              <option>ALL</option>
+              <option>Recurring</option>
+              <option>One Time</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="input-row-right">
+        <div class="input-row">
+          <div class="field-label">Search: </div>
+          <div class="field-input">
+            <input type="text" class="input-box icon-autocomplete" style="padding-right:20px !important;" id="taskname" autofocus value="The Batteries (Management & Handling) Rules, 2001" placeholder="Enter Name" >
+          </div>
+        </div>
+        <div class="input-row">
+          <div class="field-label">Repeats:</div>
+          <div class="field-input">
+            <select class="input-box" >
+              <option>ALL</option>
+              <option>Monthly</option>
+              <option>Yearly</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="submit-button-container">
+        <input type="submit" name="cancel" value="Show" class="btn-submit">
+        <input type="button"  class="btn-submit" value="Export to CSV" />
+      </div>
+      <div class="clearfix"></div>
+      <div class="grid-table">
+        <table>
+          <tr style="background-color:#ccc;">
+            <td colspan="8">Act : The Batteries (Management & Handling) Rules, 2001</td>
+          </tr>
+          <tr align="left">
+            <th width="5%" align="center">#</th>
+            <th>Task Name</th>
+            <th>Task Type</th>
+            <th>Repeats</th>
+            <th>Repeats Every</th>
+            <th>Authority</th>
+            <th>Slab Rate</th>
+            <th>Penalty Rate</th>
+          </tr>
+          <tr>
+            <td align="center">1</td>
+            <td>Submitting FORM I</td>
+            <td>Recurring</td>
+            <td>Monthly</td>
+            <td>6</td>
+            <td>Authority 1</td>
+            <td>Nil</td>
+            <td>Nil</td>
+          </tr>
+          <tr>
+            <td align="center">2</td>
+            <td>Submitting FORM II</td>
+            <td>One Time</td>
+            <td>Nil</td>
+            <td>Nil</td>
+            <td>Authority 2</td>
+            <td>Nil</td>
+            <td>Nil</td>
+          </tr>
+          <tr>
+            <td align="center">3</td>
+            <td>Submitting FORM III</td>
+            <td>Recurring</td>
+            <td>Yearly</td>
+            <td>1</td>
+            <td>Authority 1</td>
+            <td>Nil</td>
+            <td>Nil</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

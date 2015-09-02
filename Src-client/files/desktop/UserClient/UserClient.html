@@ -1,0 +1,143 @@
+{% extends "files/desktop/Header/Header.html" %}
+{% block content %}
+<div class="content-container width70">
+        <div class="content-area">
+          <div class="add-container">
+            <div class="add-container-heading">Users<span class="error-message"></span></div>
+           <div class="input-row-left">
+              <div class="input-row">
+                <div class="field-label">Employee Name:</div>
+                <div class="field-input"><input type="text" class="input-box" value="Sivaraman"></div>
+              </div>
+              <div class="input-row">
+                <div class="field-label">Employee ID:</div>
+                <div class="field-input"><input type="text" class="input-box" value="EMP001"></div>
+              </div>
+              <div class="input-row">
+                <div class="field-label">User Group:</div>
+                <div class="field-input"><input type="text" class="input-box icon-autocomplete" id="usergroup" autofocus value="Manager"></div>
+              </div>
+            </div>  
+            <div class="input-row-right">
+             <div class="input-row">
+                <div class="field-label">Date of Birth:</div>
+                <div class="field-input"><input type="date" class="input-box" value="15/02/1984"></div>
+              </div> 
+              <div class="input-row">
+                  <div class="field-label">Designation:</div>
+                  <div class="field-input"><input type="text" class="input-box" value="Manager"></div>
+                </div>
+                <div class="input-row">
+                  <div class="field-label">User Level:</div>
+                  <div class="field-input">
+                     <select class="input-box">
+                        <option>Level 1</option>
+                        <option>Level 2</option>
+                        <option selected="selected">Level 3</option>
+                        <option>Level 4</option>
+                        <option>Level 5</option>
+                        <option>Level 6</option>
+                        <option>Level 7</option>
+                        <option>Level 8</option>
+                        <option>Level 9</option>
+                        <option>Level 10</option>
+                      </select>
+                  </div>
+              </div>
+            </div>
+            <h2>Branch Info</h2>
+              <div class="input-row-left">
+                <div class="input-row">
+                  <div class="field-label">Country:</div>
+                  <div class="field-input"><input type="text" class="input-box icon-autocomplete" id="country" autofocus value="India"></div>
+                </div>
+                
+              </div>
+              <div class="input-row-right">
+                <div class="input-row">
+                  <div class="field-label">Unit Name:</div>
+                  <div class="field-input"><input type="text" class="input-box icon-autocomplete" id="unitbranch" autofocus value="Regional Office - South">
+                  </div>
+                </div>
+                  
+            </div> 
+            <h2>Contact Info</h2>
+              <div class="input-row-left">
+                <div class="input-row">
+                  <div class="field-label">Address:</div>
+                  <div class="field-input"><textarea class="input-box" style="height:70px;">145, East Cross Street, Madurai.</textarea>
+                  </div>
+              </div>
+              </div>
+              <div class="input-row-right">
+                <div class="input-row">
+                  <div class="field-label">Mobile:</div>
+                  <div class="field-input"><input type="text" class="input-box" value="9876543210"></div>
+                </div>
+              </div> 
+            
+            <h2>Login Credentials</h2>
+            <div class="input-row-left">
+              <div class="input-row" style="padding-bottom:0px;">
+                <div class="field-label">Username:</div>
+                <div class="field-input"><input type="text" class="input-box" placeholder="Username" value="sivaraman@domain.com">
+                </div>  
+              </div>
+              <div class="input-row">
+                <div class="field-label">&nbsp;</div>
+                <div class="field-input">
+                <span style="font-size:10px;">[This will be used as the contact email address for your account.]</span>
+                </div>
+              </div>
+            </div>
+            <div class="input-row-right">
+               <div class="input-row">
+                <div class="field-label">Password:</div>
+                <div class="field-input"><input type="password" class="input-box" value="123456"></div>
+              </div>
+            </div>
+            <div class="submit-button-container">
+              <input type="reset" name="cancel" value="Cancel" class="btn-cancel" onclick="location.href='/userclient/list'">&nbsp;&nbsp;
+              <input type="submit" name="submit" value="Submit" class="btn-submit">
+            </div>
+          </div>
+        </div>
+      </div>
+<script>
+$(function(){
+  $('#usergroup').autoComplete({
+      minChars: 1,
+      source: function(term, suggest){
+          term = term.toLowerCase();
+          var choices = ['Sales Manager', 'Techno Functional Manager', 'Sales Coordinator'];
+          var suggestions = [];
+          for (i=0;i<choices.length;i++)
+              if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+          suggest(suggestions);
+      }
+  });
+  $('#country').autoComplete({
+      minChars: 1,
+      source: function(term, suggest){
+          term = term.toLowerCase();
+          var choices = ['India', 'Singapore', 'Srilanka' , 'Malaysia'];
+          var suggestions = [];
+          for (i=0;i<choices.length;i++)
+              if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+          suggest(suggestions);
+      }
+  });
+   $('#unitbranch').autoComplete({
+      minChars: 1,
+      source: function(term, suggest){
+          term = term.toLowerCase();
+          var choices = ['Global Office', 'APAC Office - Singapore', 'APAC Office - Malaysia', 'Corporate office', 'Regional Office - South', 'Branch Office - Chennai', 'Branch Office - Madurai'];
+          var suggestions = [];
+          for (i=0;i<choices.length;i++)
+              if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+          suggest(suggestions);
+      }
+  });
+});
+</script>
+{% endblock %}

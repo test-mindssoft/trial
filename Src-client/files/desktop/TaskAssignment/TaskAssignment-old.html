@@ -1,0 +1,202 @@
+{% extends "files/desktop/Header/Header.html" %}
+{% block content %}
+<div class="content-container">
+        <div class="content-area">
+          <div class="add-container">
+            <div class="add-container-heading">Assign Task<span class="error-message"></span></div>
+            <div class="form-container-outer">
+            <div class="form-container-grid-table">
+              <table>
+                <tr align="left">
+                  <th width="23%" align="center">Tasks</th>
+                  <th width="18%" align="center">Triggers</th>
+                  <th colspan="2" width="40%" align="center">Assignee</th>
+                </tr>
+                <tr>
+                	<th></th>
+                	<th></th>
+                	<th width="20%">Unit</th>
+                	<th width="20%">User</th>
+                </tr>
+                <tr>
+                  <th><input type="text" name="location-name" class="filter-text-box" placeholder="Tasks" style="margin-bottom:5px"></th>
+                  <th></th>
+                  <th align="center"><input type="text" name="location-name" class="filter-text-box" placeholder="Unit" style="margin-bottom:5px"></th>
+                  <th align="center"><input type="text" name="location-name" class="filter-text-box" placeholder="User" style="margin-bottom:5px"></th>
+                </tr>
+                <tr>
+                  <td>
+                    <ul>
+                      <li>Overtime</li>
+                      <li class="active">Form Q - Register of employment</li>
+                      <li>Form R - Register of wages</li>
+                      <li>Form S - Notice</li>
+                      <li>Form T - Wage Slip</li>
+                      <li>Display of Name board</li>
+                      <li>Form P - Register of Fines, deduction for damages or loss and advance</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li class="active">Email</li>
+                      <li class="active">SMS</li>
+                      <li>Mobile App Notification</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>Head Office</li>
+                      <li>APAC Office - Singapore</li>
+                      <li>APAC Office - Malaysia</li>
+                      <li>Corporate Office - India</li>
+                      <li>Regional Office - Tamilnadu</li>
+                      <li class="active">Branch Office - Madurai</li>
+                      <li>Service Provider</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>Krishna - L1</li>
+                      <li>Hariharan - L2</li>
+                      <li>Vishnu - L3</li>
+                      <li>Vivek - L4</li>
+                      <li class="active">Raja - L5</li>
+                      <li>Amish - L5</li>
+                    </ul>
+                  </td>
+                </tr>
+              </table>
+              <table>
+              	<tr align="left">
+              		<th colspan="2" width="30%" align="center">Approve</th>
+                  <th colspan="2" width="30%" align="center">Escalations</th>
+                </tr>
+                <tr>
+                	<th width="15%">Unit</th>
+                	<th width="15%">User</th>
+                	<th width="15%">Unit</th>
+                	<th width="15%">User</th>
+                </tr>
+                  <th align="center"><input type="text" name="location-name" class="filter-text-box" placeholder="Unit" style="margin-bottom:5px"></th>
+                  <th align="center"><input type="text" name="location-name" class="filter-text-box" placeholder="User" style="margin-bottom:5px"></th>
+                  <th align="center"><input type="text" name="location-name" class="filter-text-box" placeholder="Unit" style="margin-bottom:5px"></th>
+                  <th align="center"><input type="text" name="location-name" class="filter-text-box" placeholder="User" style="margin-bottom:5px"></th>
+                </tr>
+                <tr>
+                	<td>
+                    <ul>
+                      <li>Head Office</li>
+                      <li>APAC Office - Singapore</li>
+                      <li>APAC Office - Malaysia</li>
+                      <li class="active">Corporate Office - India</li>
+                      <li class="active">Regional Office - Tamilnadu</li>
+                      <li class="active">Branch Office - Madurai</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <h3 style="background-color:gray;padding:2px;font-size:13px;color:white;">Corporate Office</h3>
+                      <li class="active">Vijay - L1</li>
+                      <br>
+                      <h3 style="background-color:gray;padding:2px;font-size:13px;color:white;">Regional Office</h3>
+                      <li Class="active">Rajaram - L1</li>
+                      <br>
+                      <h3 style="background-color:gray;padding:2px;font-size:13px;color:white;">Branch Office</h3>
+                      <li class="active">Krishna - L1</li>
+                      <li class="active">Hariharan - L2</li>
+                      <li class="active">Vishnu - L3</li>
+                      <li>Vivek - L4</li>
+                      <li>Raja - L5</li>
+                      <li>Amish - L5</li>
+                      <br>
+                      
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>Head Office</li>
+                      <li>APAC Office - Singapore</li>
+                      <li>APAC Office - Malaysia</li>
+                      <li class="active">Corporate Office - India</li>
+                      <li class="active">Regional Office - Tamilnadu</li>
+                      <li class="active">Branch Office - Madurai</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <h3 style="background-color:gray;padding:2px;font-size:13px;color:white;">Corporate Office</h3>
+                      <li class="active">Vijay - L1</li>
+                      <br>
+                      <h3 style="background-color:gray;padding:2px;font-size:13px;color:white;">Regional Office</h3>
+                      <li Class="active">Rajaram - L1</li>
+                      <br>
+                      <h3 style="background-color:gray;padding:2px;font-size:13px;color:white;">Branch Office</h3>
+                      <li class="active">Krishna    - L1</li>
+                      <li class="active">Hariharan  - L2</li>
+                      <li class="active">Vishnu    - L3</li>
+                      <li>Vivek     - L4</li>
+                      <li>Raja      - L5</li>
+                      <li>Amish     - L5</li>
+                      <br>
+                    </ul>
+                  </td>
+                </tr>
+              </table>
+            </div>
+           <div class="submit-button-container">
+              <br>
+              Due date: <input type="date" class="input-box" style="width:200px" value="2016-02-15"/>  
+              <input type="submit" name="cancel" value="Assign" class="btn-submit">
+            </div> 
+          </div>
+
+          <div class="clearfix"></div>
+              <div class="grid-table" style="width:700px;margin-left:150px">
+                <table>
+                  <tr>
+                    <th>#</th>
+                    <th align="left">Task</th>
+                    <th align="left">Unit</th>
+                    <th align="left">Assignee</th>
+                    <th align="left">Due date</th>
+                    <th style="padding-right:10px">Edit</th>
+                  </tr>
+                   <tr>
+                    <td width="5%" align="center"></td>
+                    <td><input type="text" name="location-name" class="filter-text-box"></td>
+                    <td><input type="text" name="location-name" class="filter-text-box"></td>
+                    <td><input type="text" name="location-name" class="filter-text-box"></td>
+                    <td><input type="text" name="location-name" class="filter-text-box"></td>
+                    <td width="10%" align="center"></td>
+                  </tr>
+                  <tr>
+                    <td width="5%" align="center">1</td>
+                    <td width="25%" class="location-name">Opening and Closing hours</td>
+                    <td width="25%" class="location-name">Regional Office - Tamilnadu</td>
+                    <td width="20%" class="location-name">Ramesh - L5</td>
+                    <td width="20%" class="location-name">12/12/2015</td>
+                    <td width="10%" align="center"><img src="/images/icon-edit.png"></td>
+                  </tr>
+                   <tr>
+                    <td width="5%" align="center">2</td>
+                    <td width="25%" class="location-name">Rest Inverval</td>
+                    <td width="25%" class="location-name">Branch Office - Madurai</td>
+                    <td width="20%" class="location-name">Suresh - L4</td>
+                    <td width="20%" class="location-name">10/10/2015</td>
+                    <td width="10%" align="center"><img src="/images/icon-edit.png"></td>
+                  </tr>
+                  <tr>
+                    <td width="5%" align="center">2</td>
+                    <td width="25%" class="location-name">Holidays</td>
+                    <td width="25%" class="location-name">Regional Office - Tamilnadu</td>
+                    <td width="20%" class="location-name">Vishnu - L5</td>
+                    <td width="20%" class="location-name">18/09/2015</td>
+                    <td width="10%" align="center"><img src="/images/icon-edit.png"></td>
+                  </tr>
+                </table>
+              </div>
+        </div>
+        </div>
+      </div>
+
+{% endblock %}

@@ -1,0 +1,157 @@
+{% extends "files/desktop/Header/Header.html" %}
+{% block content %}
+<div class="content-container">
+  <div class="content-area">
+    <div class="add-container">
+      <div class="add-container-heading">Task Details List<span class="error-message"></span></div>
+      <div class="input-row-left">
+        <div class="input-row">
+          <div class="field-label">Domain:</div>
+          <div class="field-input">
+            <input type="text" class="input-box icon-autocomplete" id="domain"  placeholder="Enter Domain" value="Industrial Law">
+          </div>
+        </div>
+		<div class="input-row">
+          <div class="field-label">Task Type:</div>
+          <div class="field-input">
+            <input type="text" class="input-box icon-autocomplete" id="tasktype" autofocus placeholder="Enter Task Type">
+          </div>
+        </div>
+      </div>
+      <div class="input-row-left">
+        <div class="input-row">
+          <div class="field-label">Task:</div>
+          <div class="field-input">
+            <input type="text" class="input-box icon-autocomplete" id="taskname" autofocus placeholder="Enter Task Name">
+          </div>
+        </div>
+		<div class="input-row">
+          <div class="field-label">Status:</div>
+          <div class="field-input">
+            <input type="text" class="input-box icon-autocomplete" id="status" autofocus placeholder="Enter Status">
+          </div>
+        </div>
+      </div>
+      <div class="submit-button-container">
+        <input type="submit" name="cancel" value="Show" class="btn-submit">
+        <input type="submit" name="cancel" value="Export to CSV" class="btn-submit">
+      </div>
+      <div class="clearfix"></div>
+      <div class="grid-table">
+        <table>
+          <tr align="left">
+            <th width="3%" align="center">#</th>
+            <th>Task Name</th>
+            <th>Task Type</th>
+            <th>Assign Date</th>
+            <th>Actual Due Date </th>
+            <th>Completion Date</th>
+            <th>Status</th>
+            <th>Certificate</th>
+            <th>Certificate Date</th>
+            <th>Validity Date</th>
+          </tr>
+          <tr>
+            <td align="center">1</td>
+            <td>FORM I Submission</td>
+            <td>One Time</td>
+			<td>20/08/2015</td>
+            <td>23/08/2015</td>
+            <td>24/08/2015</td>
+            <td>Complied</td>
+            <td><a href="#">Download</a></td>
+            <td>23/08/2015</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td align="center">2</td>
+            <td>FORM II Submission</td>
+            <td>Recurring</td>
+			<td>15/08/2015</td>
+            <td>20/08/2015</td>
+            <td>24/08/2015</td>
+            <td>Complied</td>
+            <td><a href="#">Download</a></td>
+            <td>23/08/2015</td>
+            <td>22/02/2016</td>
+          </tr>
+          <tr>
+            <td align="center">3</td>
+            <td>FORM III Submission</td>
+            <td>Recurring</td>
+			<td>21/08/2015</td>
+            <td>25/08/2015</td>
+            <td>26/08/2015</td>
+            <td>Inprogress</td>
+            <td></td>
+            <td></td>
+             <td></td>
+          </tr>
+          <tr>
+            <td align="center">4</td>
+            <td>FORM IV Submission</td>
+            <td>Recurring</td>
+			<td>23/08/2015</td>
+            <td>29/08/2015</td>
+            <td>31/08/2015</td>
+            <td>Complied</td>
+            <td><a href="#">Download</a></td>
+            <td>30/08/2015</td>
+             <td>29/02/2016</td>
+          </tr>
+          <tr>
+            <td align="center">5</td>
+            <td>FORM V Submission</td>
+            <td>Recurring</td>
+			<td>25/08/2015</td>
+            <td>30/08/2015</td>
+            <td>31/08/2015</td>
+            <td>Inprogress</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$(function(){
+  $('#taskname').autoComplete({
+      minChars: 1,
+      source: function(term, suggest){
+          term = term.toLowerCase();
+          var choices = ['FORM I Submission', 'FORM II Submission', 'FORM III Submission', 'FORM IV Submission', 'FORM V Submission'];
+          var suggestions = [];
+          for (i=0;i<choices.length;i++)
+              if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+          suggest(suggestions);
+      }
+  });
+   $('#tasktype').autoComplete({
+      minChars: 1,
+      source: function(term, suggest){
+          term = term.toLowerCase();
+          var choices = ['Recurring', 'One Time'];
+          var suggestions = [];
+          for (i=0;i<choices.length;i++)
+              if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+          suggest(suggestions);
+      }
+  });
+  $('#domain').autoComplete({
+      minChars: 1,
+      source: function(term, suggest){
+          term = term.toLowerCase();
+          var choices = ['Industrial Law', 'Finance Law', 'Labour Law'];
+          var suggestions = [];
+          for (i=0;i<choices.length;i++)
+              if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+          suggest(suggestions);
+      }
+  });
+ 
+});
+</script> 
+{% endblock %}

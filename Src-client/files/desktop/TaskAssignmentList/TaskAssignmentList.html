@@ -1,0 +1,128 @@
+{% extends "files/desktop/Header/Header.html" %}
+{% block content %}
+
+<div class="content-container">
+        <div class="content-area">
+          <div class="add-container">
+            <div class="add-container-heading">Task Assignment List<span class="error-message"></span></div>
+            <div class="input-row-left">
+              <div class="input-row">
+                <div class="field-label">User Type</div>
+                <div class="field-input">
+                  <select class="input-box">
+                    <option>Inhouse</option>
+                    <option>Service Provider</option>
+                  </select>
+                </div>
+              </div>
+                <div class="input-row">
+                <div class="field-label">Unit</div>
+                <div class="field-input"><input type="text" class="input-box icon-autocomplete" id="taskname" autofocus placeholder="Unit Name">
+                </div>
+              </div>
+            </div>
+           <div class="input-row-right">
+              <div class="input-row">
+                <div class="field-label">Task</div>
+                <div class="field-input"><input type="text" class="input-box icon-autocomplete" id="taskname" autofocus placeholder="Type Task Name">
+                </div>
+              </div>
+            </div>
+            
+            <div class="submit-button-container">
+              <input type="submit" name="cancel" value="Show" class="btn-submit">
+            </div>
+        <div class="clearfix"></div>
+          <div class="grid-table">
+            <table>
+             <tr align="left">
+              <th width="1%">#</th>
+              <th width="15%">Task Name</th>
+              <th width="5%">Assignee</th>
+              <th width="8%">Unit</th>
+              <th width="8%">Concurrence</th>
+              <th width="8%">Approval</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><a href="#">Submit Form P - Register of fines,deduction for damages or loss and advance</a></td>
+            <td>Krishna - L3 </td>
+            <td>Branch Office - Madurai</td>
+            <td>Abishek - L2 </td>
+            <td>Arjun - L2 </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><a href="#">Submit Form Q - Register of employment</a></td>
+            <td>vishnu - L5</td>
+            <td>Branch Office - Madurai</td>
+            <td>Rajaram - L4</td>
+            <td>Arun - L5 </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><a href="#">Submit Form R - Register of wages</a></td>
+            <td>Divagar - L5</td>
+            <td>Regional Office - South</td>
+            <td>Arun - L3</td>
+            <td>Shameer - L2</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><a href="#">Submit Form IX</a></td>
+            <td>Dhinesh - L5</td>
+            <td>Branch Office - Chennai</td>
+            <td>Krishna - L3</td>
+            <td>Arjun - L2</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><a href="#">Submit Form VI</a></td>
+            <td>IJ Service Provider</td>
+            <td>-</td>
+            <td>Arvind - L3</td>
+            <td>Shiva - L1</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+$(function(){
+  $('#taskname').autoComplete({
+      minChars: 1,
+      source: function(term, suggest){
+          term = term.toLowerCase();
+          var choices = ['Registration', 'Amendments', 'Prepare Wage Register', 'Process for Quantum', 'Remittance', 'Returns'];
+          var suggestions = [];
+          for (i=0;i<choices.length;i++)
+              if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+          suggest(suggestions);
+      }
+  });
+   $('#serviceprovidername').autoComplete({
+      minChars: 1,
+      source: function(term, suggest){
+          term = term.toLowerCase();
+          var choices = ['Ramesh', 'Muthu'];
+          var suggestions = [];
+          for (i=0;i<choices.length;i++)
+              if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+          suggest(suggestions);
+      }
+  });
+   $('#subtaskname').autoComplete({
+      minChars: 1,
+      source: function(term, suggest){
+          term = term.toLowerCase();
+          var choices = ['Process for Quantum', 'Prepare wage register', 'Sub Task 1', 'New'];
+          var suggestions = [];
+          for (i=0;i<choices.length;i++)
+              if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+          suggest(suggestions);
+      }
+  });
+});
+</script>
+{% endblock %}
